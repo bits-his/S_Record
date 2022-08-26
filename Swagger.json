@@ -90,11 +90,168 @@
                     }
                 }
             }
+        },
+        "/students": {
+            "post": {
+                "tags": [
+                    "post user"
+                ],
+                "summary": "post",
+                "description": "for submitin user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/students"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/students"
+                        }
+                    }
+                }
+            }
+        },
+        "/subject": {
+            "post": {
+                "tags": [
+                    "post user"
+                ],
+                "summary": "post",
+                "description": "for submitin user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/subject"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/subject"
+                        }
+                    }
+                }
+            }
+        },
+        "/classes": {
+            "post": {
+                "tags": [
+                    "post user"
+                ],
+                "summary": "post",
+                "description": "for submitin user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/classes"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/classes"
+                        }
+                    }
+                }
+            }
+        },
+        "/students/get": {
+            "get": {
+                "tags": [
+                    "get user"
+                ],
+                "summary": "get",
+                "description": "git list of students",
+                "parameters": [
+                  
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/classes/get": {
+            "get": {
+                "tags": [
+                    "get user"
+                ],
+                "summary": "get",
+                "description": "git list of classes",
+                "parameters": [
+                  
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/subject/get": {
+            "get": {
+                "tags": [
+                    "get user"
+                ],
+                "summary": "get",
+                "description": "git list of subject",
+                "parameters": [
+                  
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {}
+                    }
+                }
+            }
         }
     },
     "definitions": {
         "nagudu": {
             "properties": {
+                "id": {
+                    "type": "int",
+                    "uniqueItems": true
+                },
                 "user_name": {
                     "type": "string"
                 },
@@ -114,7 +271,7 @@
                     "type": "string"
                 },
                 "creted_at": {
-                    "type": "date"
+                    "type": "string"
                 },
                 "school_name": {
                     "type": "string"
@@ -134,98 +291,79 @@
                 "signature": {
                     "type": "string"
                 }
-                
             }
         },
-        "appoint": {
+        "students": {
             "properties": {
-                "email": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                },
-                "fisrt_name": {
+                "first_name": {
                     "type": "string"
                 },
                 "last_name": {
                     "type": "string"
+                },
+                "otherr_name": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "s_class": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "admission_no": {
+                    "type": "integer"
                 }
             }
         },
-        "User": {
-            "required": [
-                "username"
-            ],
+        "subject": {
             "properties": {
-                "id": {
-                    "type": "int",
-                    "uniqueItems": true
-                },
-                "username": {
-                    "type": "string",
-                    "uniqueItems": true
-                },
-                "email": {
+                "subject_name": {
                     "type": "string"
                 },
-                "phone": {
+                "created_at": {
                     "type": "string"
                 },
-                "password": {
-                    "type": "string"
-                },
-                "busName": {
-                    "type": "string"
-                },
-                "businessType": {
-                    "type": "string"
-                },
-                "address": {
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                },
-                "role": {
-                    "type": "string"
-                },
-                "date": {
-                    "type": "string"
-                },
-                "store": {
-                    "type": "string"
-                },
-                "accessTo": {
-                    "type": "string"
-                },
-                "functionality": {
-                    "type": "string"
-                },
-                "firstname": {
-                    "type": "string"
-                },
-                "lastname": {
-                    "type": "string"
-                },
-                "branch_name": {
-                    "type": "string"
-                },
-                "query_type": {
-                    "type": "string"
-                },
-                "business_includes_logistics": {
+                "create_by": {
                     "type": "string"
                 }
+              
             }
         },
-        "Users": {
-            "type": "array",
-            "$ref": "#/definitions/User"
+        "classes": {
+            "properties": {
+                "class_name": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "create_by": {
+                    "type": "string"
+                }
+              
+            }
         },
         "naudu": {
             "type": "array",
             "$ref": "#/definitions/nagudu"
+        },
+        "student": {
+            "type": "array",
+            "$ref": "#/definitions/students"
+        },
+        "subject1": {
+            "type": "array",
+            "$ref": "#/definitions/subject"
+        },
+        "classes1": {
+            "type": "array",
+            "$ref": "#/definitions/classes"
         }
     }
 }
