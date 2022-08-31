@@ -31,36 +31,6 @@
         "application/json"
     ],
     "paths": {
-        "/users/create": {
-            "post": {
-                "tags": [
-                    "accc"
-                ],
-                "summary": "User signup",
-                "description": "Create account for a new user",
-                "parameters": [
-                    {
-                        "name": "user",
-                        "in": "body",
-                        "description": "For Accont Creation",
-                        "schema": {
-                            "$ref": "#/definitions/User"
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "User created successfully",
-                        "schema": {
-                            "$ref": "#/definitions/User"
-                        }
-                    }
-                }
-            }
-        },
         "/example": {
             "post": {
                 "tags": [
@@ -151,6 +121,36 @@
                 }
             }
         },
+        "/class_subject": {
+            "post": {
+                "tags": [
+                    "post user"
+                ],
+                "summary": "post",
+                "description": "for submitin user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/class_subject"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/class_subject"
+                        }
+                    }
+                }
+            }
+        },
         "/classes": {
             "post": {
                 "tags": [
@@ -188,9 +188,7 @@
                 ],
                 "summary": "get",
                 "description": "git list of students",
-                "parameters": [
-                  
-                ],
+                "parameters": [],
                 "produces": [
                     "application/json"
                 ],
@@ -209,9 +207,7 @@
                 ],
                 "summary": "get",
                 "description": "git list of classes",
-                "parameters": [
-                  
-                ],
+                "parameters": [],
                 "produces": [
                     "application/json"
                 ],
@@ -230,9 +226,26 @@
                 ],
                 "summary": "get",
                 "description": "git list of subject",
-                "parameters": [
-                  
+                "parameters": [],
+                "produces": [
+                    "application/json"
                 ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/class_subject/get": {
+            "get": {
+                "tags": [
+                    "get user"
+                ],
+                "summary": "get",
+                "description": "git list of subject",
+                "parameters": [],
                 "produces": [
                     "application/json"
                 ],
@@ -332,7 +345,6 @@
                 "create_by": {
                     "type": "string"
                 }
-              
             }
         },
         "classes": {
@@ -346,7 +358,16 @@
                 "create_by": {
                     "type": "string"
                 }
-              
+            }
+        },
+        "class_subject": {
+            "properties": {
+                "class_id": {
+                    "type": "integer"
+                },
+                "subject_id": {
+                    "type": "integer"
+                }
             }
         },
         "naudu": {
@@ -364,6 +385,10 @@
         "classes1": {
             "type": "array",
             "$ref": "#/definitions/classes"
+        },
+        "class_subject1": {
+            "type": "array",
+            "$ref": "#/definitions/class_subject"
         }
     }
 }

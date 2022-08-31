@@ -12,7 +12,7 @@ export const classes = (req, res) => {
         .catch((err) => console.log(err))
 }   
 
-export const getSubject = (req, res) => {   
+export const getClasses = (req, res) => {   
      
     db.sequelize.query(`SELECT class_name,created_at,create_by FROM subject`)
         .then((results) => res.json({ sucsess: true, results: results }))   
