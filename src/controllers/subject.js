@@ -8,12 +8,12 @@ export const subject = (req, res) => {
     VALUES("${subject_name}","${created_at}","${create_by}")`)
         .then((results) => res.json({ sucsess: true, results: results }))
         .catch((err) => console.log(err))
-}   
+}
 
-export const getSubject = (req, res) => {   
-     
+export const getSubject = (req, res) => {
+
     db.sequelize.query(`SELECT subject_name,created_at,create_by FROM subject`)
-        .then((results) => res.json({ sucsess: true, results: results }))   
+        .then((results) => res.json({ sucsess: true, results: results }))
         .catch((err) => console.log(err))
-}   
+}
 

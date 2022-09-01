@@ -261,10 +261,6 @@
     "definitions": {
         "nagudu": {
             "properties": {
-                "id": {
-                    "type": "int",
-                    "uniqueItems": true
-                },
                 "user_name": {
                     "type": "string"
                 },
@@ -277,7 +273,13 @@
                 "last_name": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "integer"
+                },
                 "country": {
+                    "type": "string"
+                },
+                "state": {
                     "type": "string"
                 },
                 "password": {
