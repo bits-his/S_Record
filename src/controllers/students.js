@@ -16,3 +16,12 @@
         .then((results) => res.json({ sucsess: true, results: results }))
         .catch((err) => console.log(err))
     }   
+
+    export const updatStudent = (req,res)=> {
+        const {
+            first_name = "", last_name = "", otherr_name = "", age = "", s_class = "", created_by = "", admission_no = "",id=''
+            } = req.body;
+            db.sequelize.query(`update students set first_name='${first_name}',last_name="${last_name}",otherr_name="${otherr_name}",age="${age}",s_class="${s_class}",created_by="${created_by}",admission_no="${admission_no}" where id=${id}`)
+            .then((results) => res.json({ sucsess: true, results: results }))
+            .catch((err) => console.log(err))
+    }

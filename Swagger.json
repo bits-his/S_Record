@@ -91,6 +91,61 @@
                 }
             }
         },
+
+        "/example-update": {
+            "put": {
+                "tags": [
+                    "put user"
+                ],
+                "summary": "put update example",
+                "description": "for  updating example",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/nagudu"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/nagudu"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/example/get": {
+            "get": {
+                "tags": [
+                    "get user"
+                ],
+                "summary": "get",
+                "description": "for submitin user",
+                "parameters": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/nagudu"
+                        }
+                    }
+                }
+            }
+        },
         "/students": {
             "post": {
                 "tags": [
@@ -98,6 +153,36 @@
                 ],
                 "summary": "post",
                 "description": "for submitin user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/students"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/students"
+                        }
+                    }
+                }
+            }
+        },
+        "/update-student": {
+            "put": {
+                "tags": [
+                    "put user"
+                ],
+                "summary": "updating student",
+                "description": "for updating student",
                 "parameters": [
                     {
                         "name": "user",
@@ -151,6 +236,36 @@
                 }
             }
         },
+        "/update-subject": {
+            "put": {
+                "tags": [
+                    "put user"
+                ],
+                "summary": "updating subject",
+                "description": "for updating subject",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/subject"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/subject"
+                        }
+                    }
+                }
+            }
+        },
         "/classes": {
             "post": {
                 "tags": [
@@ -158,6 +273,36 @@
                 ],
                 "summary": "post",
                 "description": "for submitin user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "For Accont Creation",
+                        "schema": {
+                            "$ref": "#/definitions/classes"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/classes"
+                        }
+                    }
+                }
+            }
+        },
+        "/update-classes": {
+            "put": {
+                "tags": [
+                    "put user"
+                ],
+                "summary": "updating classes",
+                "description": "for  updating classes",
                 "parameters": [
                     {
                         "name": "user",
@@ -219,7 +364,7 @@
                     "200": {
                         "description": "User created successfully",
                         "schema": {}
-                    }
+                    } 
                 }
             }
         },
@@ -247,11 +392,7 @@
     },
     "definitions": {
         "nagudu": {
-            "properties": {
-                "id": {
-                    "type": "int",
-                    "uniqueItems": true
-                },
+            "properties": { 
                 "user_name": {
                     "type": "string"
                 },
@@ -290,6 +431,9 @@
                 },
                 "signature": {
                     "type": "string"
+                },
+                "id": {
+                    "type": "integer"
                 }
             }
         },
@@ -318,6 +462,9 @@
                 },
                 "admission_no": {
                     "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
                 }
             }
         },
@@ -331,6 +478,9 @@
                 },
                 "create_by": {
                     "type": "string"
+                },
+                "id": {
+                    "type": "integer"
                 }
               
             }
@@ -345,6 +495,9 @@
                 },
                 "create_by": {
                     "type": "string"
+                },
+                "id": {
+                    "type": "integer"
                 }
               
             }
@@ -355,6 +508,7 @@
         },
         "student": {
             "type": "array",
+
             "$ref": "#/definitions/students"
         },
         "subject1": {
