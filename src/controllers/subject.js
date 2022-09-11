@@ -4,11 +4,17 @@ export const subject = (req, res) => {
     const {
         create_by = "", subject_name = "", created_at = ""
     } = req.body;
-    db.sequelize.query(`insert into subject(subject_name,created_at,create_by)
-    VALUES("${subject_name}","${created_at}","${create_by}")`)
-        .then((results) => res.json({ sucsess: true, results: results }))
-        .catch((err) => console.log(err))
+    console.log(
+        req.body
+    )  
+    req.body.forEach((element,idx )=> {
+        db.sequelize.query(`insert into subject(subject_name,created_at,create_by)
+        VALUES("${element.value}","${created_at}","${create_by}")`)
+            .then((results) => res.json({ sucsess: true, results: results }))
+            .catch((err) => console.log(err))
+    })
 }
+   
 
 export const getSubject = (req, res) => {
 
